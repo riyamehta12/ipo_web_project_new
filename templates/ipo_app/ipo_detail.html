@@ -1,0 +1,13 @@
+{% extends 'admin_ui/base.html' %}
+
+{% block content %}
+  <h2>{{ ipo.company_name }}</h2>
+  <ul>
+    <li>Status: {{ ipo.status }}</li>
+    <li>Open Date: {{ ipo.open_date }}</li>
+    <li>Listing Date: {{ ipo.listing_date }}</li>
+    <li>Price: {{ ipo.price }}</li>
+    <!-- Add more fields as needed -->
+  </ul>
+  <a href="/">Back to IPO List</a>
+{% endblock %}

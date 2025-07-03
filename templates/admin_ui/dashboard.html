@@ -1,0 +1,52 @@
+{% extends 'admin_ui/base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>IPO Dashboard</h2>
+
+<div class="row">
+  <div class="col-md-4"><div class="alert alert-primary">Upcoming: {{ upcoming }}</div></div>
+  <div class="col-md-4"><div class="alert alert-info">Ongoing: {{ ongoing }}</div></div>
+  <div class="col-md-4"><div class="alert alert-success">Listed: {{ listed }}</div></div>
+</div>
+
+<div class="mt-4 d-flex justify-content-center">
+  <div style="max-width: 420px; width: 100%;">
+    <canvas id="ipoChart" width="400" height="400" style="max-width:100%;height:auto;"></canvas>
+    <noscript>Please enable JavaScript to view the chart.</noscript>
+  </div>
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const ctx = document.getElementById('ipoChart').getContext('2d');
+  const chart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Upcoming', 'Ongoing', 'Listed'],
+      datasets: [{
+        data: [
+          {{ upcoming|default:0|safe }},
+          {{ ongoing|default:0|safe }},
+          {{ listed|default:0|safe }}
+        ],
+        backgroundColor: ['#0d6efd', '#0dcaf0', '#198754'],
+        borderWidth: 1
+      }]
+    },
+    options:{
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+        }
+      }
+    }
+  });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,61 @@
+.ipo-searchbar-panel {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 0 0 18px 0;
+  padding: 0 24px;
+}
+
+.ipo-searchbar {
+  flex: 1 1 300px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+
+.ipo-status-filter {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .ipo-searchbar-panel {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .ipo-searchbar,
+  .ipo-status-filter {
+    width: 100%;
+    font-size: 0.97rem;
+  }
+}
+
+.ipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+@media (min-width: 900px) {
+  .ipo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ipo-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,15 @@
+{% extends 'admin_ui/base.html' %}
+
+{% block content %}
+  <h2>IPO List</h2>
+  <ul>
+    {% for ipo in ipos %}
+      <li>
+        <a href="{% url 'ipo_detail' ipo.pk %}">{{ ipo.company_name }}</a>
+        (Status: {{ ipo.status }}, Open: {{ ipo.open_date }}, Listing: {{ ipo.listing_date }})
+      </li>
+    {% empty %}
+      <li>No IPOs available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

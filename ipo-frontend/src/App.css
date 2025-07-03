@@ -1,0 +1,183 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-root {
+  min-height: 100vh;
+  background: #f5f7fa;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+.top-panel {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px 12px 32px;
+  margin-bottom: 12px;
+  position: relative;
+  justify-content: flex-start;
+}
+.top-logo {
+  height: 38px;
+  width: 38px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f5f7fa;
+  border: 1px solid #e0e0e0;
+}
+.top-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6c63ff;
+  letter-spacing: 0.5px;
+}
+.top-panel-spacer {
+  flex: 1 1 auto;
+}
+.top-user {
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+  max-width: 180px;
+  overflow: hidden;
+}
+.top-user-icon {
+  font-size: 1.7rem;
+  color: #6c63ff;
+}
+.top-user-name {
+  font-size: 1rem;
+  color: #444;
+  font-weight: 500;
+}
+.top-user-menu {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+.top-user-menu button {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.top-user-menu button:hover {
+  background: #554ee0;
+}
+.top-auth-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 32px;
+}
+.top-btn {
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  box-shadow: 0 1px 4px rgba(108,99,255,0.07);
+}
+.top-btn.signin {
+  background: transparent;
+  color: #6c63ff;
+  border: 2px solid #6c63ff;
+}
+.top-btn.signup {
+  background: #6c63ff;
+  color: #fff;
+  border: 2px solid #6c63ff;
+}
+.top-btn.logout {
+  background: #e74c3c;
+  color: #fff;
+  border: 2px solid #e74c3c;
+  font-weight: 700;
+}
+.top-btn.signin:hover {
+  background: #f5f7fa;
+}
+.top-btn.signup:hover {
+  background: #554ee0;
+  border-color: #554ee0;
+}
+.top-btn.logout:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+}
+@media (max-width: 800px) {
+  .top-panel {
+    padding: 10px 10px 8px 10px;
+    gap: 10px;
+  }
+  .top-title {
+    font-size: 1rem;
+  }
+  .top-logo {
+    height: 28px;
+    width: 28px;
+  }
+  .top-user {
+    margin-right: 10px;
+    max-width: 120px;
+  }
+}
